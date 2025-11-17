@@ -8,10 +8,14 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import ChatWindow from "@/components/chat/ChatWindow.tsx"
+import NotionWindow from "@/components/notion/NotionContent.tsx"
 
 
 export default async function Home() {
   return (
-    <ChatWindow />
+    <>
+      <SignInButton />
+        <NotionWindow />
+    </>
   );
 }

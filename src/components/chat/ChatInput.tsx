@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Paperclip, Send } from "lucide-react";
 
 export default function ChatInput({ onSend }) {
   const [value, setValue] = useState("");

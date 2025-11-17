@@ -1,6 +1,9 @@
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface AIMessageProps {
   message: string;
@@ -8,13 +11,17 @@ interface AIMessageProps {
   avatarSrc?: string;
 }
 
-export default function AIMessage({ message = "hi", time, avatarSrc }: AIMessageProps) {
+export default function AIMessage({
+  message = "hi",
+  time,
+  avatarSrc,
+}: AIMessageProps) {
   const src = avatarSrc || "/ai.png";
 
   return (
     <div className="w-full flex items-start gap-3 rounded-lg p-4 bg-[#0F1117] border border-white/10">
+      {/* Avatar */}
       <div className="flex-shrink-0">
-        {/* explicit relative + fixed size container for the avatar */}
         <div className="relative w-10 h-10 rounded-md overflow-hidden border border-white/10">
           <Image
             src={src}
@@ -26,9 +33,15 @@ export default function AIMessage({ message = "hi", time, avatarSrc }: AIMessage
         </div>
       </div>
 
-      <div className="flex flex-col gap-1 max-w-full">
+      {/* Message */}
+      <div className="flex flex-col gap-1 max-w-full text-white leading-relaxed">
         {time && <div className="text-sm text-white/70">{time}</div>}
-        <p className="text-white leading-relaxed whitespace-pre-wrap">{message}</p>
+
+        <div className="prose prose-invert max-w-none prose-p:my-1 prose-strong:font-semibold prose-code:bg-neutral-900 prose-code:px-1 prose-code:rounded break-words whitespace-pre-wrap overflow-hidden">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {message}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   );
