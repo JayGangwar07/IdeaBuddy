@@ -2,8 +2,17 @@ import mongoose from "mongoose";
 
 
 const ChatSchema = new mongoose.Schema({
-  projectId: mongoose.Schema.Types.ObjectId,
-  userId: mongoose.Schema.Types.ObjectId,
+  projectId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Project"
+  },
+  stageId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Stage"
+  },
+  userId: { 
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"},
   messages: [
     { sender: String, content: String, timestamp: { type: Date, default: Date.now } }
   ]

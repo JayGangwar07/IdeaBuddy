@@ -9,7 +9,7 @@ import db from "@/utils/db.ts"
 import {
   syncUser
 } from "@/actions/user.action"
-
+import SideBar from "@/components/SideBar"
 
 
 const geistSans = Geist({
@@ -44,6 +44,7 @@ export default async function RootLayout({
           <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         </head>
         <body>
+          <SideBar />
           {children}
         </body>
       </html>
