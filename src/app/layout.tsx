@@ -10,7 +10,7 @@ import {
   syncUser
 } from "@/actions/user.action"
 import SideBar from "@/components/SideBar"
-
+import { Toaster } from "react-hot-toast"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +44,7 @@ export default async function RootLayout({
           <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         </head>
         <body>
+        <Toaster />
           <SideBar />
           {children}
         </body>

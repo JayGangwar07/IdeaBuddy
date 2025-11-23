@@ -71,3 +71,25 @@ export async function createChats(projectId, stageId) {
   })
 
 }
+
+export async function deleteProject(projectId) {
+
+  const deleted = await Project.deleteOne({
+    _id: projectId
+  })
+
+  await Stage.deleteMany({
+    projectId
+  })
+  
+  await Chat.deleteMany({
+    projectId
+  })
+
+revalidatePath("/dashboard")
+
+if (deleted) return { success: true }
+
+else return { success: false }
+
+}
