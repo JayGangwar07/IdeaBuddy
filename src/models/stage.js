@@ -6,7 +6,7 @@ const STAGE_NAMES = [
   "MarketResearch",
   "Validation",
   "CompetitorResearch",
-  "BestCompetition",
+  "BeatCompetition",
   "MVPPlanner",
   "FindClients",
   "Marketing",

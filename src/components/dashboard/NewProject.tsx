@@ -49,7 +49,7 @@ export default function NewProject() {
       {/* New Project Card */}
       <div
         onClick={() => setIsOpen(true)}
-        className="w-full max-w-xs h-[240px] rounded-xl border border-dashed border-gray-300
+        className="w-[320px] h-[314px] rounded-xl border border-dashed border-gray-300
         flex flex-col justify-center items-center hover:bg-gray-50 transition cursor-pointer"
       >
         <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 text-3xl">
@@ -100,11 +100,10 @@ export default function NewProject() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-2 transition-all duration-200 ${
-                    errors.name
-                      ? "border-red-300 focus:border-red-500 focus:ring-red-200"
-                      : "border-slate-200 focus:border-indigo-500 focus:ring-indigo-200"
-                  }`}
+                  className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-2 transition-all duration-200 ${errors.name
+                    ? "border-red-300 focus:border-red-500 focus:ring-red-200"
+                    : "border-slate-200 focus:border-indigo-500 focus:ring-indigo-200"
+                    }`}
                   placeholder="e.g., AI Fitness Planner"
                 />
 

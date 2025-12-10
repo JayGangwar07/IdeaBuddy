@@ -14,6 +14,7 @@ import NotionWindow from "@/components/notion/NotionContent.tsx"
 export default async function Home() {
   return (
     <>
+    <SignInButton />
     hi
     </>
   );

@@ -40,7 +40,7 @@ export async function createStages(projectId) {
     "MarketResearch",
     "Validation",
     "CompetitorResearch",
-    "BestCompetition",
+    "BeatCompetition",
     "MVPPlanner",
     "FindClients",
     "Marketing",

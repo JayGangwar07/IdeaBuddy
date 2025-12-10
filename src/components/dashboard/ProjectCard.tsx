@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Clock, Trash2 } from "lucide-react";
 import { deleteProject } from "@/actions/project.action"
 import { toast } from "react-hot-toast"
+import { useRouter } from 'next/navigation'
 
 const GOOD_COLORS = [
   "bg-teal-500",
@@ -33,6 +34,8 @@ export default function ProjectCard({
   id: string;
 }) {
 
+  const router = useRouter()
+
   const [showModal, setShowModal] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -57,7 +60,9 @@ export default function ProjectCard({
   return (
     <>
       {/* CARD */}
-      <div className="relative w-full max-w-xs rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition">
+      <div onClick={() => {
+        router.push(`dashboard/${id}`)
+      }} className="relative w-full max-w-xs rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition">
 
         {/* Delete icon */}
         <button

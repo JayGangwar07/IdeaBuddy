@@ -43,7 +43,7 @@ export default async function RootLayout({
         <head>
           <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         </head>
-        <body>
+        <body className="grainy">
         <Toaster />
           <SideBar />
           {children}

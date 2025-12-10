@@ -6,6 +6,8 @@ import { syncUser } from "@/actions/user.action"
 export default async function ProjectGrid() {
 
   const user = await syncUser()
+  
+  console.log(user)
 
   const projects = await Project.find({
     userId: user._id
